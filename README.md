@@ -2,7 +2,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/SrBlecaute01/SrEmpregos.svg)](https://github.com/SrBlecaute/SrEmpregos/stargazers)
 [![GitHub All Releases](https://img.shields.io/github/downloads/SrBlecaute01/SrEmpregos/total.svg?logoColor=fff)](https://github.com/SrBlecaute01/SrEmpregos/releases/latest)
-[![GitHub issues](https://img.shields.io/github/issues-raw/heroslender/HeroMagnata.svg?label=issues)](https://github.com/heroslender/HeroMagnata/issues)
+[![GitHub issues](https://img.shields.io/github/issues-raw/hSrBlecaute01/SrEnpregos.svg?label=issues)](https://github.com/SrBlecaute01/SrEnpregos/issues)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/48103a1b283946fa8863d2c6d964375e)](https://www.codacy.com/manual/SrBlecaute01/SrEmpregos?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SrBlecaute01/SrEmpregos&amp;utm_campaign=Badge_Grade)
 
