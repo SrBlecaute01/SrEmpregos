@@ -1,0 +1,11 @@
+name: SrEmpregos
+main: br.com.blecaute.empregos.SrEmpregos
+version: 1.0-SNAPSHOT
+description: plugin de empregos
+depend: [Vault]
+softdepend: [MVdWPlaceholderAP, PlaceholderAPI, Legendchat]
+author: SrBlecaute
+commands:
+  emprego:
+    aliases: [empregos, job, jobs, trabalho, trabalhos]
+    description: comando para visualizar os empregos

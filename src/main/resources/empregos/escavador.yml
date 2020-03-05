@@ -1,0 +1,36 @@
+
+# nome do emprego
+Nome: 'Escavador'
+# tag do emprego
+Tag: '&8[&6Escavador&8]'
+# meta para obter o salário
+Meta: 500
+# salário do emprego
+Salario: 1500
+# mundos que serão efetivos
+Mundos:
+  - 'world'
+# blocos efetivos ->  https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+Validos:
+- 'DIRT'
+- 'GRASS'
+- 'CLAY'
+- 'GRAVEL'
+- 'SAND'
+- 'SNOW'
+- 'SNOW_BLOCK'
+- 'SOUL_SAND'
+
+Quests:
+  1:
+    Aumentar-Salario:
+      ativado: true
+      valor: 500
+    Meta: 100
+    Mensagem-Completou-Quest:
+      - ''
+      - ' &aParabéns você escavou 100 blocos e completou uma quest'
+      - ' &aSeu salário foi aumentado em 500 reais'
+      - ''
+    Comandos:
+      - 'give @player diamond_sword 1'

@@ -1,0 +1,29 @@
+
+# nome do emprego
+Nome: 'Assassino'
+# tag do emprego
+Tag: '&8[&cAssassino&8]'
+# meta para obter o salário
+Meta: 10
+# salário do emprego
+Salario: 1500
+# mundos que serão efetivos
+Mundos:
+- 'world'
+# entidades efetivas -> https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+Validos:
+  - 'PLAYER'
+
+Quests:
+  1:
+    Aumentar-Salario:
+      ativado: true
+      valor: 500
+    Meta: 100
+    Mensagem-Completou-Quest:
+      - ''
+      - ' &aParabéns você matou 100 jogadores e completou a quest'
+      - ' &aSeu salário foi aumentado em 500 reais'
+      - ''
+    Comandos:
+      - 'give @player diamond_sword 1'
