@@ -11,7 +11,7 @@
 
 ![Preview](https://github.com/SrBlecaute01/SrEmpregos/raw/master/assets/Screenshot_2.png)
 
-### Dependências
+## Dependências
   
   O plugin necessita que tenha o Vault instalado em seu servidor e algum plugin de economia. 
 
@@ -19,7 +19,7 @@
 
 - `/empregos` - Visualiza o menu de empregos
 
-### Placeholders
+#### Placeholders
 
 -   `{empregos_player_emprego}`      : nome do emprego do jogador
 -   `{empregos_player_meta_total}`   : total de ações efetuadas (quebrar, cortar, pescar etc)
@@ -271,12 +271,12 @@ Item-Quest:
     - ''
 ```
 
-### API
+##### API
 
 - [EmployeeAPI](https://github.com/SrBlecaute01/SrEmpregos/blob/master/src/main/java/br/com/blecaute/empregos/apis/EmployeeAPI.java) - classe para manusear os trabalhadores.
 - [JobAPI](https://github.com/SrBlecaute01/SrEmpregos/blob/master/src/main/java/br/com/blecaute/empregos/apis/JobAPI.java) - classe para manusear os empregos.
 
-### Eventos
+###### Eventos
 
 - `JobContractEvent` - Chamado quando um jogador é contratado para um emprego.
 - `JobDismissEvent` - Chamado quando um jogador pede demissão do emprego.
