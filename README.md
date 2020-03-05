@@ -14,7 +14,11 @@
 ### Dependências
   
   O plugin necessita que tenha o Vault instalado em seu servidor e algum plugin de economia. 
-  
+
+### Comandos
+
+- `/empregos` - Visualiza o menu de empregos
+
 ### Placeholders
 
 -   `{empregos_player_emprego}`      : nome do emprego do jogador
