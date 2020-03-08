@@ -8,14 +8,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Employee {
 
-    @Getter private String name;
-    @Getter @Setter private JobType job;
-    @Getter @Setter private BigDecimal salary;
-    @Getter @Setter private Integer currentMeta = 0;
-    @Getter @Setter private Integer completedMeta = 0;
-    @Getter @Setter private List<String> questsComplete = new ArrayList<>();
+    private String name;
+    @Setter private JobType job;
+    @Setter private BigDecimal salary;
+    @Setter private Integer currentMeta = 0;
+    @Setter private Integer completedMeta = 0;
+    @Setter private List<String> questsComplete = new ArrayList<>();
 
     public Employee(String name, JobType job, BigDecimal salary) {
         this.name = name;

@@ -25,10 +25,19 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 
 public class SrEmpregos extends JavaPlugin {
@@ -45,6 +54,7 @@ public class SrEmpregos extends JavaPlugin {
 
     @Getter private static List<Job> jobs = new ArrayList<>();
     @Getter private static List<Employee> employees = new ArrayList<>();
+    @Getter private static final Executor executor = ForkJoinPool.commonPool();
 
     @Override
     public void onEnable() {
@@ -61,6 +71,7 @@ public class SrEmpregos extends JavaPlugin {
             loadManagers();
             registerEvents();
             registerCommands();
+            checkUpdate();
 
             Bukkit.getConsoleSender().sendMessage("");
             Bukkit.getConsoleSender().sendMessage("§b _____     ");
@@ -213,5 +224,46 @@ public class SrEmpregos extends JavaPlugin {
                 break;
         }
         return null;
+    }
+
+    /**
+     *  Agradecimentos ao VitorBlog pelo seu tutorial
+     *  de como fazer a verificação de atualizações ;)
+     */
+
+    private void checkUpdate() {
+        CompletableFuture.runAsync(() -> {
+            String link = "https://api.github.com/repos/SrBlecaute01/SrEmpregos/releases/latest";
+            String version = this.getDescription().getVersion();
+
+            try {
+                URL url = new URL(link);
+                URLConnection connection = url.openConnection();
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String response = reader.lines().collect(Collectors.joining("\n"));
+
+                JSONObject jsonObject = (JSONObject) new JSONParser().parse(response);
+                String latestVersion = (String) jsonObject.get("tag_name");
+                String download = (String) jsonObject.get("html_url");
+
+                if (!version.equals(latestVersion)){
+                    info("");
+                    info(" §cUma nova versão está disponível!");
+                    info(" §cVersão atual: §7" + version);
+                    info(" §cNova versão: §7" + latestVersion);
+                    info("");
+                    info(" §cPara baixar a versão mais recente abra o link abaixo:");
+                    info(" §a" + download);
+                    info("");
+
+                } else {
+                    info("§aVocê está na versão mais recente do plugin");
+                }
+
+            } catch (Exception e) {
+                info("§cOcorreu um erro ao tentar verificar as atualizações: " + e.getMessage());
+            }
+        }, getExecutor());
     }
 }

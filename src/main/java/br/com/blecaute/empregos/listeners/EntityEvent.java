@@ -23,15 +23,13 @@ public class EntityEvent implements Listener {
                 JobType playerJob = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
 
                 if(!SrEmpregos.getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
-                if(playerJob.equals(JobType.KILLER) || playerJob.equals(JobType.HUNTER)) {
-                    if(SrEmpregos.getJobManager().isValidJobEntity(playerJob, e.getEntityType())) {
+                if (!playerJob.equals(JobType.KILLER) && !playerJob.equals(JobType.HUNTER)) return;
+                if (!SrEmpregos.getJobManager().isValidJobEntity(playerJob, e.getEntityType())) return;
 
-                        Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
-                        employee.setCompletedMeta(employee.getCompletedMeta() + 1);
-                        employee.setCurrentMeta(employee.getCurrentMeta() + 1);
-                        JobUtils.executeEvents(p, employee, playerJob);
-                    }
-                }
+                Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
+                employee.setCompletedMeta(employee.getCompletedMeta() + 1);
+                employee.setCurrentMeta(employee.getCurrentMeta() + 1);
+                JobUtils.executeEvents(p, employee, playerJob);
             }
         }
     }

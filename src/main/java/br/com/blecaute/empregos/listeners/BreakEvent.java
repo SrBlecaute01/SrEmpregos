@@ -22,19 +22,15 @@ public class BreakEvent implements Listener {
             JobType playerJob = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
 
             if(!SrEmpregos.getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
-            if(playerJob.equals(JobType.MINER) || playerJob.equals(JobType.DIGGER) || playerJob.equals(JobType.FARMER) || playerJob.equals(JobType.LUMBERJACK)) {
-                if(SrEmpregos.getJobManager().isValidJobMaterial(playerJob, e.getBlock().getType())) {
+            if (!playerJob.equals(JobType.MINER) && !playerJob.equals(JobType.DIGGER) && !playerJob.equals(JobType.FARMER) && !playerJob.equals(JobType.LUMBERJACK)) return;
 
-                    if(playerJob.equals(JobType.FARMER)) {
-                        if(e.getBlock().getState().getData() instanceof Crops && !JobUtils.isGrown(e.getBlock())) return;
-                    }
+            if (!SrEmpregos.getJobManager().isValidJobMaterial(playerJob, e.getBlock().getType())) return;
+            if(playerJob.equals(JobType.FARMER) && e.getBlock().getState().getData() instanceof Crops && !JobUtils.isGrown(e.getBlock())) return;
 
-                    Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
-                    employee.setCompletedMeta(employee.getCompletedMeta() + 1);
-                    employee.setCurrentMeta(employee.getCurrentMeta() + 1);
-                    JobUtils.executeEvents(p, employee, playerJob);
-                }
-            }
+            Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
+            employee.setCompletedMeta(employee.getCompletedMeta() + 1);
+            employee.setCurrentMeta(employee.getCurrentMeta() + 1);
+            JobUtils.executeEvents(p, employee, playerJob);
         }
     }
 }

@@ -25,17 +25,15 @@ public class FishEvent implements Listener {
             JobType playerJob = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
 
             if(!SrEmpregos.getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
-            if(playerJob.equals(JobType.FISHER)) {
-                Item item = (Item) e.getCaught();
+            if (!playerJob.equals(JobType.FISHER)) return;
+            Item item = (Item) e.getCaught();
 
-                if(SrEmpregos.getJobManager().isValidJobMaterial(playerJob, item.getItemStack().getType())) {
+            if (!SrEmpregos.getJobManager().isValidJobMaterial(playerJob, item.getItemStack().getType())) return;
 
-                    Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
-                    employee.setCompletedMeta(employee.getCompletedMeta() + 1);
-                    employee.setCurrentMeta(employee.getCurrentMeta() + 1);
-                    JobUtils.executeEvents(p, employee, playerJob);
-                }
-            }
+            Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
+            employee.setCompletedMeta(employee.getCompletedMeta() + 1);
+            employee.setCurrentMeta(employee.getCurrentMeta() + 1);
+            JobUtils.executeEvents(p, employee, playerJob);
         }
     }
 }

@@ -14,13 +14,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ForkJoinPool;
 
 public class SQLManager {
 
     private final String table = "`SrEmpregos`";
-    private final Executor executor = ForkJoinPool.commonPool();
 
     public void createTable(String table, String column) {
         try (Connection c = SrEmpregos.getDb().getConnection()) {
@@ -112,6 +109,6 @@ public class SQLManager {
             } catch (SQLException e) {
                 SrEmpregos.info("§cOcorreu um erro ao tentar deletar os dados do jogador " + employee.getName() + " (" + e.getMessage() + ")");
             }
-        }, executor);
+        }, SrEmpregos.getExecutor());
     }
 }

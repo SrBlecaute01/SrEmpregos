@@ -9,13 +9,12 @@ import org.bukkit.event.player.PlayerEvent;
 public class JobContractEvent extends PlayerEvent {
 
     @Getter private JobType job;
+    private static final HandlerList handler = new HandlerList();
 
     public JobContractEvent(Player p, JobType job) {
         super(p);
         this.job = job;
     }
-
-    private static final HandlerList handler = new HandlerList();
 
     public static HandlerList getHandlerList() {
         return handler;

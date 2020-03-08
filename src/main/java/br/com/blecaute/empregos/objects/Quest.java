@@ -8,16 +8,14 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.util.List;
 
-@AllArgsConstructor
+@AllArgsConstructor @Getter
 public class Quest {
 
-    @Getter private String id;
-    @Getter private JobType job;
-    @Getter @Setter private BigDecimal salary;
-    @Getter @Setter private Integer meta;
-
-    @Getter private Boolean increaseSalary;
-
-    @Getter @Setter private List<String> messageComplete;
-    @Getter @Setter private List<String> commands;
+    private String id;
+    private JobType job;
+    @Setter private BigDecimal salary;
+    @Setter private Integer meta;
+    private Boolean increaseSalary;
+    @Setter private List<String> messageComplete;
+    @Setter private List<String> commands;
 }
