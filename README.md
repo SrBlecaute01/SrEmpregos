@@ -2,7 +2,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/SrBlecaute01/SrEmpregos.svg)](https://github.com/SrBlecaute01/SrEmpregos/stargazers)
 [![GitHub All Releases](https://img.shields.io/github/downloads/SrBlecaute01/SrEmpregos/total.svg?logoColor=fff)](https://github.com/SrBlecaute01/SrEmpregos/releases/latest)
-[![GitHub issues](https://img.shields.io/github/issues-raw/hSrBlecaute01/SrEmpregos.svg?label=issues)](https://github.com/SrBlecaute01/SrEmpregos/issues)
+[![GitHub issues](https://img.shields.io/github/issues-raw/SrBlecaute01/SrEmpregos.svg?label=issues)](https://github.com/SrBlecaute01/SrEmpregos/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/SrBlecaute01/SrEmpregos.svg)](https://github.com/SrBlecaute01/SrEmpregos/commit)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/48103a1b283946fa8863d2c6d964375e)](https://www.codacy.com/manual/SrBlecaute01/SrEmpregos?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SrBlecaute01/SrEmpregos&amp;utm_campaign=Badge_Grade)
@@ -13,8 +13,12 @@
 ![Preview](https://github.com/SrBlecaute01/SrEmpregos/raw/master/assets/Screenshot_2.png)
 
 ### Dependências
-
+  
   O plugin necessita que tenha o Vault instalado em seu servidor e algum plugin de economia. 
+
+### Comandos
+
+- `/empregos` - Visualiza o menu de empregos
 
 ### Placeholders
 
@@ -37,6 +41,7 @@
 #  \    |  .  \     |     |     \     |  |  |     | |  | |     |
 #   \___|__|\_|_____|_____|_____|\____|__|__|\__,_| |__| |_____|
 #       plugin de empregos    Versão: 1.0-SNAPSHOT
+
 # =========================
 #                         MySQL
 # caso desativado irá usar sqlite como forma de armazenamento.
@@ -47,27 +52,33 @@ MySQL:
   database: ''
   usuario: ''
   senha: ''
+
 # Sons do sistema, mais sons em -> https://github.com/Attano/Spigot-1.8/blob/master/org/bukkit/Sound.java
 Sons:
   Erro: 'NOTE_BASS'
   Geral: 'ITEM_PICKUP'
   Sucesso: 'NOTE_PLING'
+
 # mensagens do plugin
 Mensagens:
   Sem-Emprego: '&cVocê não tem nenhum emprego para poder fazer isso!'
   Com-Emprego: '&cVocê já tem um emprego! peça demissão para exercer este cargo'
   Foi-Contratado: '&aVocê foi contratado para o emprego de @emprego'
   Pediu-Demissao: '&cVocê pediu demissão do seu emprego ;('
+
   Recebeu-Pagamento:
   - ''
   - ' &eEmprego: &7você recebeu seu salário de &2R$ &f@salario'
   - ''
+
 Preferencias:
   # tag do emprego no legendchat {empregos}
   Chat-Tag: true
+
   # nome do emprego da placeholder caso o jogador não tenha nenhum
   Placeholder:
     Desempregado: '&cSem emprego'
+
   # barra de progresso 
   Barra-De-Progress:
     # símbolo da barra
@@ -82,6 +93,7 @@ Preferencias:
     Primeiro: '&8['
     # último símbolo da barra
     Ultimo: '&8]'
+
 Empregos-Gui:
   # nome da gui de empregos
   Nome: '&8Empregos'
@@ -89,11 +101,13 @@ Empregos-Gui:
   Sem-Emprego: '&cDesempregado'
   Seleionar-Emprego: '&aClique para selecionar esse emprego'
   Emprego-Selecionado: '&cVocê já está nesse emprego'
+
     #   @emprego : nome do emprego
     #   @tag     : tag do emprego
     #   @meta    : meta para receer o salário
     #   @salario : salário do emprego
     #   @quests   : número de quests
+
   Minerador:
     # se ativado ele irá ignorar o item
     Skull:
@@ -109,6 +123,7 @@ Empregos-Gui:
       - '&7Meta: &cminerar @meta blocos'
       - '&7Quests: &e@quests'
       - ''
+
   Escavador:
     Skull:
       Ativado: false
@@ -120,6 +135,7 @@ Empregos-Gui:
       - '&7Meta: &cescavar @meta blocos'
       - '&7Quests: &e@quests'
       - ''
+
   Lenhador:
     Skull:
       Ativado: false
@@ -131,6 +147,7 @@ Empregos-Gui:
       - '&7Meta: &ccortar @meta madeiras'
       - '&7Quests: &e@quests'
       - ''
+
   Fazendeiro:
     Skull:
       Ativado: false
@@ -142,6 +159,7 @@ Empregos-Gui:
       - '&7Meta: &ccolher @meta plantas'
       - '&7Quests: &e@quests'
       - ''
+
   Pescador:
     Skull:
       Ativado: false
@@ -153,6 +171,7 @@ Empregos-Gui:
     - '&7Meta: &cpescar @meta peixes'
     - '&7Quests: &e@quests'
     - ''
+
   Cacador:
     Skull:
       Ativado: false
@@ -164,6 +183,7 @@ Empregos-Gui:
       - '&7Meta: &ccaçar @meta mobs'
       - '&7Quests: &e@quests'
       - ''
+
   Assassino:
     Skull:
       Ativado: false
@@ -175,6 +195,7 @@ Empregos-Gui:
       - '&7Meta: &cmatar @meta jogadores'
       - '&7Quests: &e@quests'
       - ''
+
 Item-Confirmar:
   Skull:
     Ativado: true
@@ -183,6 +204,7 @@ Item-Confirmar:
   Nome: '&aConfirmar'
   Lore:
     - '&7Clique para confirmar'
+
 Item-Cancelar:
   Skull:
     Ativado: true
@@ -191,6 +213,7 @@ Item-Cancelar:
   Nome: '&cCancelar'
   Lore:
     - '&7Clique para cancelar'
+
 Item-Pedir-As-Contas:
   Skull:
     Ativado: false
@@ -200,6 +223,7 @@ Item-Pedir-As-Contas:
   Lore:
     - '&7Se sair do seu emprego todo o seu'
     - '&7progresso conquistado será perdido!'
+
 Item-Conquistas:
   Skull:
     Ativado: false
@@ -208,6 +232,7 @@ Item-Conquistas:
   Nome: '&aSuas conquistas'
   Lore:
     - '&7Veja suas conquistas'
+
 #
 #   @player   : nome do jogador
 #   @emprego  : nome do emprego do jogador
@@ -227,6 +252,7 @@ Item-Info:
     - '&7Meta: &a@current&7/&c@meta'
     - '&7Total: @total'
     - '&7Quests concluidas: &e@quests'
+
 # @emprego    : nome do emprego da quest
 # @tipo1      : ação efetuada
 # @tipo2      : tipo de bloco/entidade válida
@@ -239,6 +265,7 @@ Item-Quest:
     Pescador: 'pescar-peixes'
     Assassino: 'assassinar-jogadores'
     Escavador: 'escavar-blocos'
+
   Nome: '&aDesafio do emprego @emprego'
   Lore:
     - '&7O objetivo deste emprego é @tipo1 &e@quantia &7@tipo2'
