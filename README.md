@@ -1,10 +1,12 @@
 # SrEmpregos
 
-[![GitHub stars](https://img.shields.io/github/stars/SrBlecaute01/SrEmpregos.svg)](https://github.com/SrBlecaute/SrEmpregos/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/SrBlecaute01/SrEmpregos.svg)](https://github.com/SrBlecaute01/SrEmpregos/stargazers)
 [![GitHub All Releases](https://img.shields.io/github/downloads/SrBlecaute01/SrEmpregos/total.svg?logoColor=fff)](https://github.com/SrBlecaute01/SrEmpregos/releases/latest)
-[![GitHub issues](https://img.shields.io/github/issues-raw/heroslender/HeroMagnata.svg?label=issues)](https://github.com/heroslender/HeroMagnata/issues)
+[![GitHub issues](https://img.shields.io/github/issues-raw/hSrBlecaute01/SrEmpregos.svg?label=issues)](https://github.com/SrBlecaute01/SrEmpregos/issues)
+[![GitHub issues](https://img.shields.io/github/issues-raw/SrBlecaute01/SrEmpregos.svg?label=issues)](https://github.com/SrBlecaute01/SrEmpregos/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/SrBlecaute01/SrEmpregos.svg)](https://github.com/SrBlecaute01/SrEmpregos/commit)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/92a07f9d6f96450896890f0d2138e15a)](https://www.codacy.com/manual/SrBlecaute01/SrEmpregos?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SrBlecaute01/SrEmpregos&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/48103a1b283946fa8863d2c6d964375e)](https://www.codacy.com/manual/SrBlecaute01/SrEmpregos?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SrBlecaute01/SrEmpregos&amp;utm_campaign=Badge_Grade)
 
   Plugin de empregos com suporte a Legendchat, PlaceholderAPI e MVdWPlaceholderAPI. Atualmente existem 7 tipos de empregos que tem suas funções configuráveis: Minerador, Escavador, Lenhador, Caçador, Assassino, Pescador e Fazendeiro. 
   O sistema conta com um sistema de salário toda vez que o jogador conseguir bater a meta estipulada. Além disso, existe um sistema de quests que pode aumentar o salário do jogador.
