@@ -228,7 +228,7 @@ public class SrEmpregos extends JavaPlugin {
 
     /**
      *  Agradecimentos ao VitorBlog pelo seu tutorial
-     *  de como fazer a verificação de atualizações ;)
+     *  de como fazer as verificações de atualizações ;)
      */
 
     private void checkUpdate() {
