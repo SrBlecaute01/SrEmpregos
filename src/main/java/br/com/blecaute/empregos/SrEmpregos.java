@@ -254,7 +254,7 @@ public class SrEmpregos extends JavaPlugin {
                     info(" §cNova versão: §7" + latestVersion);
                     info("");
                     info(" §cPara baixar a versão mais recente abra o link abaixo:");
-                    info(" §a" + download);
+                    info(" §7" + download);
                     info("");
 
                 } else {
