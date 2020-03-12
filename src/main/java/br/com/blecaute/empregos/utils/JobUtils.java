@@ -22,7 +22,7 @@ public class JobUtils {
     @SuppressWarnings("deprecation")
     public static void executeEvents(Player p, Employee employee, JobType job) {
 
-        SrEmpregos.getJobManager().getJobQuests(job).stream().filter(f -> !SrEmpregos.getEmployeeManager().isCompleted(p.getName(), f)).forEach(q -> {
+        SrEmpregos.getInstance().getJobManager().getJobQuests(job).stream().filter(f -> !SrEmpregos.getInstance().getEmployeeManager().isCompleted(p.getName(), f)).forEach(q -> {
             if(employee.getCompletedMeta() >= q.getMeta()) {
                 JobQuestCompleteEvent event = new JobQuestCompleteEvent(p, q, employee);
                 Bukkit.getPluginManager().callEvent(event);
@@ -49,15 +49,15 @@ public class JobUtils {
             }
         });
 
-        int jobMeta = SrEmpregos.getJobManager().getJobMeta(job);
+        int jobMeta = SrEmpregos.getInstance().getJobManager().getJobMeta(job);
         if(employee.getCurrentMeta() >= jobMeta) {
             JobGetPaymentEvent event = new JobGetPaymentEvent(p, employee, job);
             Bukkit.getPluginManager().callEvent(event);
-            SrEmpregos.getEconomy().depositPlayer(p.getName(), event.getEmployee().getSalary().doubleValue());
+            SrEmpregos.getInstance().getEconomy().depositPlayer(p.getName(), event.getEmployee().getSalary().doubleValue());
             employee.setCurrentMeta(0);
 
             p.playSound(p.getLocation(), Sound.ITEM_PICKUP, 5, 1.0F);
-            SrEmpregos.getMessagesManager().getMessageList("pagamento").stream()
+            SrEmpregos.getInstance().getMessagesManager().getMessageList("pagamento").stream()
                     .map(m -> m.replace("@salario", Utils.getNumberFormatted(event.getEmployee().getSalary().doubleValue())))
                     .forEach(p::sendMessage);
         }

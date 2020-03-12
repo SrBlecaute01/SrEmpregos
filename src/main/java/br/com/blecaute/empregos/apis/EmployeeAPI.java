@@ -20,7 +20,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean hasJob(String p) {
-        return SrEmpregos.getEmployeeManager().hasJob(p);
+        return SrEmpregos.getInstance().getEmployeeManager().hasJob(p);
     }
 
     /**
@@ -30,7 +30,7 @@ public class EmployeeAPI {
      */
 
     public static Employee getEmployeeAccount(String p) {
-        return SrEmpregos.getEmployeeManager().getEmployeeAccount(p);
+        return SrEmpregos.getInstance().getEmployeeManager().getEmployeeAccount(p);
     }
 
     /**
@@ -41,7 +41,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean isInJob(String p, JobType job) {
-        return SrEmpregos.getEmployeeManager().isInJob(p, job);
+        return SrEmpregos.getInstance().getEmployeeManager().isInJob(p, job);
     }
 
     /**
@@ -51,7 +51,7 @@ public class EmployeeAPI {
      */
 
     public static JobType getEmployeeJob(String p) {
-        return SrEmpregos.getEmployeeManager().getEmployeeJob(p);
+        return SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p);
     }
 
     /**
@@ -61,7 +61,7 @@ public class EmployeeAPI {
      */
 
     public static BigDecimal getEmployeeSalary(String p) {
-        return SrEmpregos.getEmployeeManager().getEmployeeSalary(p);
+        return SrEmpregos.getInstance().getEmployeeManager().getEmployeeSalary(p);
     }
 
     /**
@@ -72,7 +72,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean setEmployeeSalary(String p, BigDecimal salary) {
-        return SrEmpregos.getEmployeeManager().setEmployeeSalary(p, salary);
+        return SrEmpregos.getInstance().getEmployeeManager().setEmployeeSalary(p, salary);
     }
 
     /**
@@ -83,7 +83,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean addEmployeeSalary(String p, BigDecimal salary) {
-        return SrEmpregos.getEmployeeManager().addEmployeeSalary(p, salary);
+        return SrEmpregos.getInstance().getEmployeeManager().addEmployeeSalary(p, salary);
     }
 
     /**
@@ -94,7 +94,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean removeEmployeeSalary(String p, BigDecimal salary) {
-        return SrEmpregos.getEmployeeManager().removeEmployeeSalary(p, salary);
+        return SrEmpregos.getInstance().getEmployeeManager().removeEmployeeSalary(p, salary);
     }
 
     /**
@@ -104,7 +104,7 @@ public class EmployeeAPI {
      */
 
     public static Integer getEmployeeCurrentMeta(String p) {
-        return SrEmpregos.getEmployeeManager().getEmployeeCurrentMeta(p);
+        return SrEmpregos.getInstance().getEmployeeManager().getEmployeeCurrentMeta(p);
     }
 
     /**
@@ -115,7 +115,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean setEmployeeCurrentMeta(String p, Integer value) {
-        return SrEmpregos.getEmployeeManager().setEmployeeCurrentMeta(p, value);
+        return SrEmpregos.getInstance().getEmployeeManager().setEmployeeCurrentMeta(p, value);
     }
 
     /**
@@ -125,7 +125,7 @@ public class EmployeeAPI {
      */
 
     public static Integer getEmployeeMeta(String p) {
-        return SrEmpregos.getEmployeeManager().getEmployeeMeta(p);
+        return SrEmpregos.getInstance().getEmployeeManager().getEmployeeMeta(p);
     }
 
     /**
@@ -136,7 +136,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean setEmployeeMeta(String p, Integer value) {
-        return SrEmpregos.getEmployeeManager().setEmployeeMeta(p, value);
+        return SrEmpregos.getInstance().getEmployeeManager().setEmployeeMeta(p, value);
     }
 
     /**
@@ -147,7 +147,7 @@ public class EmployeeAPI {
      */
 
     public Boolean addJob(Player p, JobType job) {
-        return SrEmpregos.getEmployeeManager().contractPlayer(p, job);
+        return SrEmpregos.getInstance().getEmployeeManager().contractPlayer(p, job);
     }
 
     /**
@@ -157,7 +157,7 @@ public class EmployeeAPI {
      */
 
     public Boolean dismissPlayer(String p) {
-        return SrEmpregos.getEmployeeManager().dismissPlayer(p);
+        return SrEmpregos.getInstance().getEmployeeManager().dismissPlayer(p);
     }
 
     /**
@@ -168,7 +168,7 @@ public class EmployeeAPI {
      */
 
     public Boolean setEmployeeJob(String p, JobType job) {
-        return SrEmpregos.getEmployeeManager().setEmployeeJob(p, job);
+        return SrEmpregos.getInstance().getEmployeeManager().setEmployeeJob(p, job);
     }
 
     /**
@@ -178,7 +178,7 @@ public class EmployeeAPI {
      */
 
     public static List<String> getEmployeeQuests(String p) {
-        return SrEmpregos.getEmployeeManager().getEmployeeQuests(p);
+        return SrEmpregos.getInstance().getEmployeeManager().getEmployeeQuests(p);
     }
 
     /**
@@ -189,7 +189,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean addEmployeeQuests(String p, Quest q) {
-        return SrEmpregos.getEmployeeManager().addEmployeeQuests(p, q);
+        return SrEmpregos.getInstance().getEmployeeManager().addEmployeeQuests(p, q);
     }
 
     /**
@@ -200,7 +200,7 @@ public class EmployeeAPI {
      */
 
     public static Boolean removeEmployeeQuest(String p, Quest q) {
-        return SrEmpregos.getEmployeeManager().removeEmployeeQuest(p, q);
+        return SrEmpregos.getInstance().getEmployeeManager().removeEmployeeQuest(p, q);
     }
 
     /**
@@ -211,6 +211,6 @@ public class EmployeeAPI {
      */
 
     public static Boolean isCompleted(String p, Quest q) {
-        return SrEmpregos.getEmployeeManager().isCompleted(p, q);
+        return SrEmpregos.getInstance().getEmployeeManager().isCompleted(p, q);
     }
 }

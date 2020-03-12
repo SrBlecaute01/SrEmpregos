@@ -20,17 +20,17 @@ public class FishEvent implements Listener {
         if(!e.getState().equals(PlayerFishEvent.State.CAUGHT_FISH)) return;
         if(!(e.getCaught() instanceof Item)) return;
 
-        if(SrEmpregos.getEmployeeManager().hasJob(e.getPlayer().getName())) {
+        if(SrEmpregos.getInstance().getEmployeeManager().hasJob(e.getPlayer().getName())) {
             Player p = e.getPlayer();
-            JobType playerJob = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
+            JobType playerJob = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
 
-            if(!SrEmpregos.getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
+            if(!SrEmpregos.getInstance().getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
             if (!playerJob.equals(JobType.FISHER)) return;
             Item item = (Item) e.getCaught();
 
-            if (!SrEmpregos.getJobManager().isValidJobMaterial(playerJob, item.getItemStack().getType())) return;
+            if (!SrEmpregos.getInstance().getJobManager().isValidJobMaterial(playerJob, item.getItemStack().getType())) return;
 
-            Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
+            Employee employee = SrEmpregos.getInstance().getEmployeeManager().getEmployeeAccount(p.getName());
             employee.setCompletedMeta(employee.getCompletedMeta() + 1);
             employee.setCurrentMeta(employee.getCurrentMeta() + 1);
             JobUtils.executeEvents(p, employee, playerJob);

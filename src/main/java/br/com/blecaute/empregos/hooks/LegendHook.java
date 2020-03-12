@@ -21,9 +21,9 @@ public class LegendHook implements Listener {
     public void onChat(ChatMessageEvent e) {
         if(!enable) return;
         if(!e.getTags().contains("empregos")) return;
-        if(SrEmpregos.getEmployeeManager().hasJob(e.getSender().getName())) {
-            JobType job  = SrEmpregos.getEmployeeManager().getEmployeeJob(e.getSender().getName());
-            String tag = SrEmpregos.getJobManager().getJobTag(job);
+        if(SrEmpregos.getInstance().getEmployeeManager().hasJob(e.getSender().getName())) {
+            JobType job  = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(e.getSender().getName());
+            String tag = SrEmpregos.getInstance().getJobManager().getJobTag(job);
             e.setTagValue("empregos", tag);
         }
     }

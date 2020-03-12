@@ -14,6 +14,6 @@ public enum JobType {
     FISHER;
 
     public static String getName(String job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().name().equalsIgnoreCase(job)).map(Job::getName).findFirst().orElse("");
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().name().equalsIgnoreCase(job)).map(Job::getName).findFirst().orElse("");
     }
 }

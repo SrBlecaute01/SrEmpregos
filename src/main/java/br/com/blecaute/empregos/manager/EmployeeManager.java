@@ -16,11 +16,11 @@ import java.util.List;
 public class EmployeeManager {
 
     public Boolean hasJob(String p) {
-        return SrEmpregos.getEmployees().stream().anyMatch(m -> m.getName().equalsIgnoreCase(p));
+        return SrEmpregos.getInstance().getEmployees().stream().anyMatch(m -> m.getName().equalsIgnoreCase(p));
     }
 
     public Employee getEmployeeAccount(String p) {
-        return SrEmpregos.getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).findFirst().orElse(null);
+        return SrEmpregos.getInstance().getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).findFirst().orElse(null);
     }
 
     public Boolean isInJob(String p, JobType job) {
@@ -32,11 +32,11 @@ public class EmployeeManager {
     }
 
     public JobType getEmployeeJob(String p) {
-        return SrEmpregos.getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getJob).findFirst().orElse(null);
+        return SrEmpregos.getInstance().getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getJob).findFirst().orElse(null);
     }
 
     public BigDecimal getEmployeeSalary(String p) {
-        return SrEmpregos.getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getSalary).findFirst().orElse(new BigDecimal("0"));
+        return SrEmpregos.getInstance().getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getSalary).findFirst().orElse(new BigDecimal("0"));
     }
 
     public Boolean setEmployeeSalary(String p, BigDecimal salary) {
@@ -67,7 +67,7 @@ public class EmployeeManager {
     }
 
     public Integer getEmployeeCurrentMeta(String p) {
-        return SrEmpregos.getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getCurrentMeta).findFirst().orElse(0);
+        return SrEmpregos.getInstance().getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getCurrentMeta).findFirst().orElse(0);
     }
 
     public Boolean setEmployeeCurrentMeta(String p, Integer value) {
@@ -80,7 +80,7 @@ public class EmployeeManager {
     }
 
     public Integer getEmployeeMeta(String p) {
-        return SrEmpregos.getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getCompletedMeta).findFirst().orElse(0);
+        return SrEmpregos.getInstance().getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getCompletedMeta).findFirst().orElse(0);
     }
 
     public Boolean setEmployeeMeta(String p, Integer value) {
@@ -94,7 +94,7 @@ public class EmployeeManager {
 
     public Boolean contractPlayer(Player p, JobType job) {
         if(!hasJob(p.getName())) {
-            SrEmpregos.getEmployees().add(new Employee(p.getName(), job, SrEmpregos.getJobManager().getJobSalary(job)));
+            SrEmpregos.getInstance().getEmployees().add(new Employee(p.getName(), job, SrEmpregos.getInstance().getJobManager().getJobSalary(job)));
             JobContractEvent event = new JobContractEvent(p, job);
             Bukkit.getPluginManager().callEvent(event);
             return true;
@@ -105,8 +105,8 @@ public class EmployeeManager {
     public Boolean dismissPlayer(String p) {
         if(hasJob(p)) {
             Employee employee = getEmployeeAccount(p);
-            SrEmpregos.getEmployees().remove(employee);
-            SrEmpregos.getSqlManager().deleteEmployee(employee);
+            SrEmpregos.getInstance().getEmployees().remove(employee);
+            SrEmpregos.getInstance().getSqlManager().deleteEmployee(employee);
 
             JobDismissEvent event = new JobDismissEvent(employee, employee.getJob());
             Bukkit.getPluginManager().callEvent(event);
@@ -124,7 +124,7 @@ public class EmployeeManager {
     }
 
     public List<String> getEmployeeQuests(String p) {
-        return SrEmpregos.getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getQuestsComplete).findFirst().orElse(new ArrayList<>());
+        return SrEmpregos.getInstance().getEmployees().stream().filter(f -> f.getName().equalsIgnoreCase(p)).map(Employee::getQuestsComplete).findFirst().orElse(new ArrayList<>());
     }
 
     public Boolean addEmployeeQuests(String p, Quest q) {

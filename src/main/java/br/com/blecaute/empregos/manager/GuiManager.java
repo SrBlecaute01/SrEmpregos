@@ -54,7 +54,7 @@ public class GuiManager {
 
     public void openJobsGui(Player p) {
         Inventory inv = Bukkit.createInventory(new GuiHolder(GuiType.JOBS), 5 * 9, this.guiName);
-        JobType job = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
+        JobType job = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
 
         inv.setItem(10, getJobItem(miner, JobType.MINER, job));
         inv.setItem(12, getJobItem(lumber, JobType.LUMBERJACK, job));
@@ -84,8 +84,8 @@ public class GuiManager {
         int start = 11, index = page * 15 - 15;
 
         Inventory inv = Bukkit.createInventory(new GuiHolder(GuiType.QUESTS, page, job), 6 * 9, "§8Suas conquistas");
-        List<Quest> quests = SrEmpregos.getJobManager().getJobQuests(job);
-        EmployeeManager employee = SrEmpregos.getEmployeeManager();
+        List<Quest> quests = SrEmpregos.getInstance().getJobManager().getJobQuests(job);
+        EmployeeManager employee = SrEmpregos.getInstance().getEmployeeManager();
 
         for(; index < quests.size(); index++) {
             ItemStack item;
@@ -201,8 +201,8 @@ public class GuiManager {
     }
 
     private String changePlayerValues(Player p, String msg) {
-        EmployeeManager employee = SrEmpregos.getEmployeeManager();
-        JobManager manager = SrEmpregos.getJobManager();
+        EmployeeManager employee = SrEmpregos.getInstance().getEmployeeManager();
+        JobManager manager = SrEmpregos.getInstance().getJobManager();
 
         String meta = employee.hasJob(p.getName()) ? "" + manager.getJobMeta(employee.getEmployeeJob(p.getName())) : "0";
         String job = employee.hasJob(p.getName()) ? manager.getJobName(employee.getEmployeeJob(p.getName())) : jobStatus;
@@ -229,7 +229,7 @@ public class GuiManager {
 
     private String changeValues(JobType job, String msg) {
         if(job == null) return msg;
-        JobManager manager = SrEmpregos.getJobManager();
+        JobManager manager = SrEmpregos.getInstance().getJobManager();
         return msg
                 .replace("@emprego", JobType.getName(job.name()).replace("&", "§"))
                 .replace("@tag", manager.getJobTag(job).replace("&", "§"))

@@ -43,18 +43,18 @@ import java.util.stream.Collectors;
 public class SrEmpregos extends JavaPlugin {
 
     @Getter private static SrEmpregos instance;
-    @Getter private static Economy economy;
-    @Getter private static Database db;
+    @Getter private Economy economy;
+    @Getter private Database db;
 
-    @Getter private static MessagesManager messagesManager;
-    @Getter private static GuiManager guiManager;
-    @Getter private static JobManager jobManager;
-    @Getter private static EmployeeManager employeeManager;
-    @Getter private static SQLManager sqlManager;
+    @Getter private MessagesManager messagesManager;
+    @Getter private GuiManager guiManager;
+    @Getter private JobManager jobManager;
+    @Getter private EmployeeManager employeeManager;
+    @Getter private SQLManager sqlManager;
 
-    @Getter private static List<Job> jobs = new ArrayList<>();
-    @Getter private static List<Employee> employees = new ArrayList<>();
-    @Getter private static final Executor executor = ForkJoinPool.commonPool();
+    @Getter private List<Job> jobs = new ArrayList<>();
+    @Getter private List<Employee> employees = new ArrayList<>();
+    @Getter private final Executor executor = ForkJoinPool.commonPool();
 
     @Override
     public void onEnable() {

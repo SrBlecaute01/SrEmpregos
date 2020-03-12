@@ -30,27 +30,27 @@ public class ClickEvent implements Listener {
                 if(e.getRawSlot() == 37) {
 
                     p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
-                    if(!SrEmpregos.getEmployeeManager().hasJob(p.getName())) {
+                    if(!SrEmpregos.getInstance().getEmployeeManager().hasJob(p.getName())) {
                         Utils.sendSound(p, SrEmpregos.getInstance().getConfig().getString("Sons.Erro"));
-                        p.sendMessage(SrEmpregos.getMessagesManager().getMessage("sem.emprego"));
+                        p.sendMessage(SrEmpregos.getInstance().getMessagesManager().getMessage("sem.emprego"));
                         break;
                     }
 
-                    JobType job = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
-                    SrEmpregos.getGuiManager().openQuests(p, 1, job);
+                    JobType job = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
+                    SrEmpregos.getInstance().getGuiManager().openQuests(p, 1, job);
                     break;
                 }
 
                 if(e.getRawSlot() == 44) {
 
                     p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
-                    if(!SrEmpregos.getEmployeeManager().hasJob(p.getName())) {
+                    if(!SrEmpregos.getInstance().getEmployeeManager().hasJob(p.getName())) {
                         Utils.sendSound(p, SrEmpregos.getInstance().getConfig().getString("Sons.Erro"));
-                        p.sendMessage(SrEmpregos.getMessagesManager().getMessage("sem.emprego"));
+                        p.sendMessage(SrEmpregos.getInstance().getMessagesManager().getMessage("sem.emprego"));
                         break;
                     }
 
-                    SrEmpregos.getGuiManager().openDismiss(p);
+                    SrEmpregos.getInstance().getGuiManager().openDismiss(p);
                     break;
                 }
 
@@ -92,17 +92,17 @@ public class ClickEvent implements Listener {
                 if(job == null) break;
                 p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
 
-                if(SrEmpregos.getEmployeeManager().isInJob(p.getName(), job)) break;
-                if(SrEmpregos.getEmployeeManager().hasJob(p.getName())) {
+                if(SrEmpregos.getInstance().getEmployeeManager().isInJob(p.getName(), job)) break;
+                if(SrEmpregos.getInstance().getEmployeeManager().hasJob(p.getName())) {
                     Utils.sendSound(p, SrEmpregos.getInstance().getConfig().getString("Sons.Erro"));
-                    p.sendMessage(SrEmpregos.getMessagesManager().getMessage("com.emprego"));
+                    p.sendMessage(SrEmpregos.getInstance().getMessagesManager().getMessage("com.emprego"));
                     break;
                 }
 
                 p.closeInventory();
-                if(SrEmpregos.getEmployeeManager().contractPlayer(p, job)) {
+                if(SrEmpregos.getInstance().getEmployeeManager().contractPlayer(p, job)) {
                     Utils.sendSound(p, SrEmpregos.getInstance().getConfig().getString("Sons.Sucesso"));
-                    p.sendMessage(SrEmpregos.getMessagesManager().getMessage("contratado").replace("@emprego", SrEmpregos.getJobManager().getJobName(job)));
+                    p.sendMessage(SrEmpregos.getInstance().getMessagesManager().getMessage("contratado").replace("@emprego", SrEmpregos.getInstance().getJobManager().getJobName(job)));
                 } else {
                     p.sendMessage("§cOcorreu um erro ao tentar fazer essa operação!");
                 }
@@ -121,9 +121,9 @@ public class ClickEvent implements Listener {
                     p.closeInventory();
                     p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
 
-                    if(SrEmpregos.getEmployeeManager().dismissPlayer(p.getName())) {
+                    if(SrEmpregos.getInstance().getEmployeeManager().dismissPlayer(p.getName())) {
                         Utils.sendSound(p, SrEmpregos.getInstance().getConfig().getString("Sons.Sucesso"));
-                        p.sendMessage(SrEmpregos.getMessagesManager().getMessage("demissao"));
+                        p.sendMessage(SrEmpregos.getInstance().getMessagesManager().getMessage("demissao"));
                     } else {
                         p.sendMessage("§cOcorreu um erro ao tentar fazer essa operação!");
                     }
@@ -136,20 +136,20 @@ public class ClickEvent implements Listener {
                 if(e.getRawSlot() == 48) {
                     p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
                     int page = holder.getPage() - 1;
-                    SrEmpregos.getGuiManager().openQuests(p, page, holder.getJob());
+                    SrEmpregos.getInstance().getGuiManager().openQuests(p, page, holder.getJob());
                     break;
                 }
 
                 if(e.getRawSlot() == 49) {
                     p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
-                    SrEmpregos.getGuiManager().openJobsGui(p);
+                    SrEmpregos.getInstance().getGuiManager().openJobsGui(p);
                     break;
                 }
 
                 if(e.getRawSlot() == 50) {
                     p.playSound(p.getLocation(), Sound.CLICK, 5, 1.0F);
                     int page = holder.getPage() + 1;
-                    SrEmpregos.getGuiManager().openQuests(p, page, holder.getJob());
+                    SrEmpregos.getInstance().getGuiManager().openQuests(p, page, holder.getJob());
                     break;
                 }
 

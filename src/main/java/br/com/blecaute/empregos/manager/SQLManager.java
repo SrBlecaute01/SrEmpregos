@@ -20,7 +20,7 @@ public class SQLManager {
     private final String table = "`SrEmpregos`";
 
     public void createTable(String table, String column) {
-        try (Connection c = SrEmpregos.getDb().getConnection()) {
+        try (Connection c = SrEmpregos.getInstance().getDb().getConnection()) {
             c.createStatement().execute("CREATE TABLE IF NOT EXISTS " + table + " (" + column + ")");
         } catch (SQLException e) {
             SrEmpregos.info("§cOcorreu um erro ao tentar criar a tabela do plugin (" + e.getMessage() + ")");
@@ -29,7 +29,7 @@ public class SQLManager {
 
     public List<Employee> getEmployees() {
         List<Employee> list = new ArrayList<>();
-        try (Connection c = SrEmpregos.getDb().getConnection()) {
+        try (Connection c = SrEmpregos.getInstance().getDb().getConnection()) {
             try(ResultSet rs = c.createStatement().executeQuery("SELECT * FROM " + table)) {
                 while(rs.next()) {
                     String name = rs.getString("name");
@@ -58,8 +58,8 @@ public class SQLManager {
     }
 
     public void saveEmployees() {
-        ImmutableList<Employee> employees = ImmutableList.copyOf(SrEmpregos.getEmployees());
-        try (Connection c = SrEmpregos.getDb().getConnection()) {
+        ImmutableList<Employee> employees = ImmutableList.copyOf(SrEmpregos.getInstance().getEmployees());
+        try (Connection c = SrEmpregos.getInstance().getDb().getConnection()) {
             for(Employee employee : employees) {
                 try(PreparedStatement ps = c.prepareStatement("SELECT * FROM " + table + " WHERE `name` = ?")) {
                     ps.setString(1, employee.getName());
@@ -100,7 +100,7 @@ public class SQLManager {
 
     public void deleteEmployee(Employee employee) {
         CompletableFuture.runAsync(() -> {
-            try (Connection c = SrEmpregos.getDb().getConnection()) {
+            try (Connection c = SrEmpregos.getInstance().getDb().getConnection()) {
                 try(PreparedStatement ps = c.prepareStatement("DELETE FROM " + table + " WHERE `name` = ?")) {
                     ps.setString(1, employee.getName());
                     ps.executeUpdate();
@@ -109,6 +109,6 @@ public class SQLManager {
             } catch (SQLException e) {
                 SrEmpregos.info("§cOcorreu um erro ao tentar deletar os dados do jogador " + employee.getName() + " (" + e.getMessage() + ")");
             }
-        }, SrEmpregos.getExecutor());
+        }, SrEmpregos.getInstance().getExecutor());
     }
 }

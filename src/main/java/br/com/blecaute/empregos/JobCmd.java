@@ -20,7 +20,7 @@ public class JobCmd implements CommandExecutor {
 
             Player p = (Player)s;
             p.playSound(p.getLocation(), Sound.NOTE_PLING, 5, 1.0F);
-            SrEmpregos.getGuiManager().openJobsGui(p);
+            SrEmpregos.getInstance().getGuiManager().openJobsGui(p);
             return true;
         }
         return false;

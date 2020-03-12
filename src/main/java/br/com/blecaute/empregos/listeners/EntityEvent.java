@@ -5,7 +5,6 @@ import br.com.blecaute.empregos.enums.JobType;
 import br.com.blecaute.empregos.objects.Employee;
 import br.com.blecaute.empregos.utils.JobUtils;
 import org.bukkit.GameMode;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -19,14 +18,14 @@ public class EntityEvent implements Listener {
         if(e.getEntity().getKiller() != null) {
             Player p = e.getEntity().getKiller();
             if(p.getGameMode().equals(GameMode.CREATIVE)) return;
-            if(SrEmpregos.getEmployeeManager().hasJob(p.getName())) {
-                JobType playerJob = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
+            if(SrEmpregos.getInstance().getEmployeeManager().hasJob(p.getName())) {
+                JobType playerJob = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
 
-                if(!SrEmpregos.getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
+                if(!SrEmpregos.getInstance().getJobManager().isValidJobWorld(playerJob, p.getWorld().getName())) return;
                 if (!playerJob.equals(JobType.KILLER) && !playerJob.equals(JobType.HUNTER)) return;
-                if (!SrEmpregos.getJobManager().isValidJobEntity(playerJob, e.getEntityType())) return;
+                if (!SrEmpregos.getInstance().getJobManager().isValidJobEntity(playerJob, e.getEntityType())) return;
 
-                Employee employee = SrEmpregos.getEmployeeManager().getEmployeeAccount(p.getName());
+                Employee employee = SrEmpregos.getInstance().getEmployeeManager().getEmployeeAccount(p.getName());
                 employee.setCompletedMeta(employee.getCompletedMeta() + 1);
                 employee.setCurrentMeta(employee.getCurrentMeta() + 1);
                 JobUtils.executeEvents(p, employee, playerJob);

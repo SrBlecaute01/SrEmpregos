@@ -50,32 +50,32 @@ public class PlaceholderHook extends PlaceholderExpansion {
         switch (param) {
             case "player_emprego":
 
-                if (SrEmpregos.getEmployeeManager().hasJob(p.getName())) {
-                    JobType job = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
-                    return SrEmpregos.getJobManager().getJobTag(job);
+                if (SrEmpregos.getInstance().getEmployeeManager().hasJob(p.getName())) {
+                    JobType job = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
+                    return SrEmpregos.getInstance().getJobManager().getJobTag(job);
 
                 } else {
                     return withoutJob.replace("&", "§");
                 }
 
             case "player_meta_total":
-                return "" + SrEmpregos.getEmployeeManager().getEmployeeMeta(p.getName());
+                return "" + SrEmpregos.getInstance().getEmployeeManager().getEmployeeMeta(p.getName());
 
             case "player_current":
-                return "" + SrEmpregos.getEmployeeManager().getEmployeeCurrentMeta(p.getName());
+                return "" + SrEmpregos.getInstance().getEmployeeManager().getEmployeeCurrentMeta(p.getName());
 
             case "player_quests":
-                return "" + SrEmpregos.getEmployeeManager().getEmployeeQuests(p.getName()).size();
+                return "" + SrEmpregos.getInstance().getEmployeeManager().getEmployeeQuests(p.getName()).size();
 
             case "player_salary":
-                return Utils.getNumberFormatted(SrEmpregos.getEmployeeManager().getEmployeeSalary(p.getName()).doubleValue());
+                return Utils.getNumberFormatted(SrEmpregos.getInstance().getEmployeeManager().getEmployeeSalary(p.getName()).doubleValue());
 
             case "player_progress": {
 
-                if (SrEmpregos.getEmployeeManager().hasJob(p.getName())) {
-                    int current = SrEmpregos.getEmployeeManager().getEmployeeCurrentMeta(p.getName());
-                    JobType job = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
-                    int meta = SrEmpregos.getJobManager().getJobMeta(job);
+                if (SrEmpregos.getInstance().getEmployeeManager().hasJob(p.getName())) {
+                    int current = SrEmpregos.getInstance().getEmployeeManager().getEmployeeCurrentMeta(p.getName());
+                    JobType job = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
+                    int meta = SrEmpregos.getInstance().getJobManager().getJobMeta(job);
                     return "" + (float) ((current * 100) / meta);
                 } else {
                     return "" + 0.0;
@@ -83,9 +83,9 @@ public class PlaceholderHook extends PlaceholderExpansion {
             }
 
             case "player_progress_bar": {
-                int current = SrEmpregos.getEmployeeManager().getEmployeeCurrentMeta(p.getName());
-                JobType job = SrEmpregos.getEmployeeManager().getEmployeeJob(p.getName());
-                int meta = SrEmpregos.getJobManager().getJobMeta(job);
+                int current = SrEmpregos.getInstance().getEmployeeManager().getEmployeeCurrentMeta(p.getName());
+                JobType job = SrEmpregos.getInstance().getEmployeeManager().getEmployeeJob(p.getName());
+                int meta = SrEmpregos.getInstance().getJobManager().getJobMeta(job);
                 if (meta <= 0) meta = 100;
 
                 return first + Utils.getProgressBar(current, meta, bar, amount, colorCompleted, colorIncomplete) + end;

@@ -18,7 +18,7 @@ public class JobAPI {
      */
 
     public static String getJobName(JobType job) {
-        return SrEmpregos.getJobManager().getJobName(job);
+        return SrEmpregos.getInstance().getJobManager().getJobName(job);
     }
 
     /**
@@ -28,7 +28,7 @@ public class JobAPI {
      */
 
     public static String getJobTag(JobType job) {
-        return SrEmpregos.getJobManager().getJobTag(job);
+        return SrEmpregos.getInstance().getJobManager().getJobTag(job);
     }
 
     /**
@@ -38,7 +38,7 @@ public class JobAPI {
      */
 
     public static BigDecimal getJobSalary(JobType job) {
-        return SrEmpregos.getJobManager().getJobSalary(job);
+        return SrEmpregos.getInstance().getJobManager().getJobSalary(job);
     }
 
     /**
@@ -48,7 +48,7 @@ public class JobAPI {
      */
 
     public static Integer getJobMeta(JobType job) {
-        return SrEmpregos.getJobManager().getJobMeta(job);
+        return SrEmpregos.getInstance().getJobManager().getJobMeta(job);
     }
 
     /**
@@ -58,7 +58,7 @@ public class JobAPI {
      */
 
     public static List<String> getJobWorlds(JobType job) {
-        return SrEmpregos.getJobManager().getJobWorlds(job);
+        return SrEmpregos.getInstance().getJobManager().getJobWorlds(job);
     }
 
     /**
@@ -68,7 +68,7 @@ public class JobAPI {
      */
 
     public static List<Quest> getJobQuests(JobType job) {
-        return SrEmpregos.getJobManager().getJobQuests(job);
+        return SrEmpregos.getInstance().getJobManager().getJobQuests(job);
     }
 
     /**
@@ -79,6 +79,6 @@ public class JobAPI {
      */
 
     public static Boolean isValidJobWorld(JobType job, String world) {
-        return SrEmpregos.getJobManager().isValidJobWorld(job, world);
+        return SrEmpregos.getInstance().getJobManager().isValidJobWorld(job, world);
     }
 }

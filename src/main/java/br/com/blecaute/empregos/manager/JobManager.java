@@ -41,27 +41,27 @@ public class JobManager {
     }
 
     public String getJobName(JobType job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getName).findFirst().orElse("invalid");
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getName).findFirst().orElse("invalid");
     }
 
     public String getJobTag(JobType job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getTag).findFirst().orElse("");
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getTag).findFirst().orElse("");
     }
 
     public BigDecimal getJobSalary(JobType job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getSalary).findFirst().orElse(new BigDecimal("0"));
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getSalary).findFirst().orElse(new BigDecimal("0"));
     }
 
     public Integer getJobMeta(JobType job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getMeta).findFirst().orElse(0);
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getMeta).findFirst().orElse(0);
     }
 
     public List<String> getJobWorlds(JobType job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getWorlds).findFirst().orElse(new ArrayList<>());
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getWorlds).findFirst().orElse(new ArrayList<>());
     }
 
     public List<Quest> getJobQuests(JobType job) {
-        return SrEmpregos.getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getQuests).findFirst().orElse(new ArrayList<>());
+        return SrEmpregos.getInstance().getJobs().stream().filter(f -> f.getType().equals(job)).map(Job::getQuests).findFirst().orElse(new ArrayList<>());
     }
 
     public Boolean isValidJobWorld(JobType job, String world) {
