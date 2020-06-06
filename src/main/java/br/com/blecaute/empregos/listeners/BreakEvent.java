@@ -14,8 +14,9 @@ import org.bukkit.material.Crops;
 
 public class BreakEvent implements Listener {
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent e) {
+        if(e.isCancelled()) return;
         if(e.getPlayer().getGameMode().equals(GameMode.CREATIVE)) return;
         if(SrEmpregos.getInstance().getEmployeeManager().hasJob(e.getPlayer().getName())) {
             Player p = e.getPlayer();

@@ -1,0 +1,29 @@
+
+# nome do emprego
+Nome: 'Minerador'
+# tag do emprego
+Tag: '&8[&aPescador&8]'
+# meta para obter o salário
+Meta: 500
+# salário do emprego
+Salario: 1500
+# mundos que serão efetivos
+Mundos:
+  - 'world'
+# blocos efetivos ->  https://helpch.at/docs/1.8/org/bukkit/Material.html
+Validos:
+  - 'RAW_FISH'
+
+Quests:
+  1:
+    Aumentar-Salario:
+      ativado: true
+      valor: 500
+    Meta: 100
+    Mensagem-Completou-Quest:
+      - ''
+      - ' &aParabéns você pescou 100 peixes e completou uma quest'
+      - ' &aSeu salário foi aumentado em 500 reais'
+      - ''
+    Comandos:
+      - 'give @player diamond_sword 1'

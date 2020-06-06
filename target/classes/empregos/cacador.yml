@@ -1,0 +1,49 @@
+
+# nome do emprego
+Nome: 'Caçador'
+# tag do emprego
+Tag: '&8[&5Caçador&8]'
+# meta para obter o salário
+Meta: 500
+# salário do emprego
+Salario: 1500
+# mundos que serão efetivos
+Mundos:
+  - 'world'
+# entidades efetivas -> https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+Validos:
+  - 'BAT'
+  - 'BLAZE'
+  - 'CAVE_SPIDER'
+  - 'CHICKEN'
+  - 'COW'
+  - 'CREEPER'
+  - 'ENDER_DRAGON'
+  - 'ENDERMAN'
+  - 'GHAST'
+  - 'GUARDIAN'
+  - 'IRON_GOLEM'
+  - 'MAGMA_CUBE'
+  - 'MUSHROOM_COW'
+  - 'PIG'
+  - 'PIG_ZOMBIE'
+  - 'ZOMBIE'
+  - 'SPIDER'
+  - 'SILVERFISH'
+  - 'SKELETON'
+  - 'WITCH'
+  - 'WITHER'
+
+Quests:
+  1:
+    Aumentar-Salario:
+      ativado: true
+      valor: 500
+    Meta: 100
+    Mensagem-Completou-Quest:
+      - ''
+      - ' &aParabéns você matou 100 mobs e completou a quest'
+      - ' &aSeu salário foi aumentado em 500 reais'
+      - ''
+    Comandos:
+      - 'give @player diamond_sword 1'

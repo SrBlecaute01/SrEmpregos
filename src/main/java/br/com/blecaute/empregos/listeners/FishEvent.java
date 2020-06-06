@@ -14,8 +14,9 @@ import org.bukkit.event.player.PlayerFishEvent;
 
 public class FishEvent implements Listener {
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onPlayerFish(PlayerFishEvent e) {
+        if(e.isCancelled()) return;
         if(e.getPlayer().getGameMode().equals(GameMode.CREATIVE)) return;
         if(!e.getState().equals(PlayerFishEvent.State.CAUGHT_FISH)) return;
         if(!(e.getCaught() instanceof Item)) return;

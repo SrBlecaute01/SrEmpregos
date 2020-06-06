@@ -1,0 +1,29 @@
+
+# nome do emprego
+Nome: 'Lenhador'
+# tag do emprego
+Tag: '&8[&6Lenhador&8]'
+# meta para obter o salário
+Meta: 500
+# salário do emprego
+Salario: 1500
+# mundos que serão efetivos
+Mundos:
+  - 'world'
+# blocos efetivos ->  https://helpch.at/docs/1.8/org/bukkit/Material.html
+Validos:
+  - 'WOOD'
+
+Quests:
+  1:
+    Aumentar-Salario:
+      ativado: true
+      valor: 500
+    Meta: 100
+    Mensagem-Completou-Quest:
+      - ''
+      - ' &aParabéns você cortou 100 madeiras e completou uma quest'
+      - ' &aSeu salário foi aumentado em 500 reais'
+      - ''
+    Comandos:
+      - 'give @player diamond_sword 1'
