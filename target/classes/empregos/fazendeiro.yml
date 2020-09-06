@@ -1,31 +1,57 @@
 
 # nome do emprego
-Nome: 'Fazendeiro'
+nome: 'Fazendeiro'
 # tag do emprego
-Tag: '&8[&eFazendeiro&8]'
+tag: '&8[&eFazendeiro&8]'
 # meta para obter o salário
-Meta: 500
+meta: 500
 # salário do emprego
-Salario: 1500
+salario: 1500
 # mundos que serão efetivos
-Mundos:
+mundos:
   - 'world'
 # blocos efetivos ->  https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
-Validos:
+validos:
   - 'CROPS'
   - 'MELON_BLOCK'
   - 'NETHER_WARTS'
 
-Quests:
+desafios:
   1:
-    Aumentar-Salario:
+    # posição do desafio
+    ordem: 1
+    # meta a ser atingida
+    meta: 100
+    # aumentar o salário do jogador
+    aumento:
       ativado: true
       valor: 500
-    Meta: 100
-    Mensagem-Completou-Quest:
+
+    # icone que ficará no menu de quests
+    icone:
+      skull:
+        # caso ativado irá ignorar o item
+        ativado: false
+        url: ''
+      # material do item
+      material: 'CROPS'
+      # data do item
+      data: 0
+      # nome do item
+      nome: '&e#1 desafio'
+      # lore do item
+      lore:
+        - '&7Colha 100 plantas para'
+        - '&7completar esse desafio.'
+        - ''
+
+    # mensagem ao completar ao completar o desafio
+    mensagem:
       - ''
       - ' &aParabéns você colheu 100 plantas e completou uma quest'
       - ' &aSeu salário foi aumentado em 500 reais'
       - ''
-    Comandos:
+
+    # comandos executados ao completar o desafio
+    comandos:
       - 'give @player diamond_sword 1'

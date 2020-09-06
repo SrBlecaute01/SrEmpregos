@@ -1,17 +1,17 @@
 
 # nome do emprego
-Nome: 'Minerador'
+nome: 'Minerador'
 # tag do emprego
-Tag: '&8[&bMinerador&8]'
+tag: '&8[&bMinerador&8]'
 # meta para obter o salário
-Meta: 500
+meta: 500
 # salário do emprego
-Salario: 1500
+salario: 1500
 # mundos que serão efetivos
-Mundos:
+mundos:
   - 'world'
 # blocos efetivos ->  https://helpch.at/docs/1.8/org/bukkit/Material.html
-Validos:
+validos:
   - 'DIAMOND_ORE'
   - 'EMERALD_ORE'
   - 'REDSTONE_ORE'
@@ -21,16 +21,42 @@ Validos:
   - 'COAL_ORE'
   - 'LAPIS_ORE'
 
-Quests:
+desafios:
   1:
-    Aumentar-Salario:
+    # posição do desafio
+    ordem: 1
+    # meta a ser atingida
+    meta: 100
+    # aumentar o salário do jogador
+    aumento:
       ativado: true
       valor: 500
-    Meta: 100
-    Mensagem-Completou-Quest:
+
+    # icone que ficará no menu de quests
+    icone:
+      skull:
+        # caso ativado irá ignorar o item
+        ativado: false
+        url: ''
+      # material do item
+      material: 'COAL_ORE'
+      # data do item
+      data: 0
+      # nome do item
+      nome: '&e#1 desafio'
+      # lore do item
+      lore:
+        - '&7Minere 100 minérios para'
+        - '&7completar esse desafio.'
+        - ''
+
+    # mensagem ao completar ao completar o desafio
+    mensagem:
       - ''
-      - ' &aParabéns você minerou 100 blocos e completou uma quest'
+      - ' &aParabéns você minerou 100 minérios e completou uma quest'
       - ' &aSeu salário foi aumentado em 500 reais'
       - ''
-    Comandos:
-    - 'give @player diamond_sword 1'
+
+    # comandos executados ao completar o desafio
+    comandos:
+      - 'give @player diamond_sword 1'
