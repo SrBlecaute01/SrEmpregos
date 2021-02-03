@@ -315,11 +315,11 @@ desafio-bloqueado: '&cDesafio bloqueado'
 
 ## API
 
-- [JobAPI](https://github.com/SrBlecaute01/SrEmpregos/blob/master/src/main/java/br/com/blecaute/jobs/apis/JobAPI.java)
+-   [JobAPI](https://github.com/SrBlecaute01/SrEmpregos/blob/master/src/main/java/br/com/blecaute/jobs/apis/JobAPI.java)
 
 ## Eventos
 
-- `JobContractEvent` - Chamado quando um jogador é contratado para um emprego.
-- `JobDismissEvent` - Chamado quando um jogador pede demissão do emprego.
-- `JobGetPaymentEvent` - Chamado quando o jogador recebe seu pagamento.
-- `JobQuestCompleteEvent` - Chamado quando o jogador completa uma quest.
+-   `JobContractEvent` - Chamado quando um jogador é contratado para um emprego.
+-   `JobDismissEvent` - Chamado quando um jogador pede demissão do emprego.
+-   `JobGetPaymentEvent` - Chamado quando o jogador recebe seu pagamento.
+-   `JobQuestCompleteEvent` - Chamado quando o jogador completa uma quest.
