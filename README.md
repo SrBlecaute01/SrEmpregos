@@ -12,38 +12,38 @@
 
 ![Preview](https://github.com/SrBlecaute01/SrEmpregos/raw/master/assets/Screenshot_2.png)
 
-### Dependências
+## Dependências
   
   O plugin necessita que tenha o Vault instalado em seu servidor e algum plugin de economia. 
 
-### Comandos
+## Comandos
 
-- `/empregos` - Visualiza o menu de empregos
+-   `/empregos` - Visualiza o menu de empregos
 
-### Placeholders
+## Placeholders
 
-| Placeholder| Descrição |
-|--|--|
-| {jobs_player_job} | nome do emprego do jogador |
-| {jobs_player_meta} |  total de ações efetuadas (quebrar, cortar, pescar etc) |
-| {jobs_player_current} | total de ações efetuadas para receber o salário |
-| {jobs_player_quests} | quantidade de quests concluidas |
-| {jobs_player_salary} | salário atual do jogador |
-| {jobs_player_progress} |  barra de progresso para receber o salário |
+| Placeholder            | Descrição                                              |
+|------------------------|--------------------------------------------------------|
+| {jobs_player_job}      | nome do emprego do jogador                             |
+| {jobs_player_meta}     | total de ações efetuadas (quebrar, cortar, pescar etc) |
+| {jobs_player_current}  | total de ações efetuadas para receber o salário        |
+| {jobs_player_quests}   | quantidade de quests concluidas                        |
+| {jobs_player_salary}   | salário atual do jogador                               |
+| {jobs_player_progress} | barra de progresso para receber o salário              |
 
-### Empregos
+## Empregos
 
-| Emprego| Permissao|
-|--|--|
-| Escavador  | job.digger |
-| Fazendeiro | job.farmer |
-| Pescador   | job.fisher |
-| Caçador    | job.hunter |
-| Assassino  | job.killer |
+| Emprego    | Permissao     |
+|------------|---------------|
+| Escavador  | job.digger    |
+| Fazendeiro | job.farmer    |
+| Pescador   | job.fisher    |
+| Caçador    | job.hunter    |
+| Assassino  | job.killer    |
 | Lenhador   | job.lumberjack|
-| minerador  | job.miner |
+| minerador  | job.miner     |
 
-### Config
+## Config
 
 ```yaml
 #   _________  ____  _       ___    __  ____ __ __ ______   ___
@@ -313,11 +313,11 @@ desafio-iniciado: '&cDesafio não concluído'
 desafio-bloqueado: '&cDesafio bloqueado'
 ```
 
-### API
+## API
 
 - [JobAPI](https://github.com/SrBlecaute01/SrEmpregos/blob/master/src/main/java/br/com/blecaute/jobs/apis/JobAPI.java)
 
-### Eventos
+## Eventos
 
 - `JobContractEvent` - Chamado quando um jogador é contratado para um emprego.
 - `JobDismissEvent` - Chamado quando um jogador pede demissão do emprego.
